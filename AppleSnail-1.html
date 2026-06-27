@@ -1,0 +1,356 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner with Search</title>
+    <title>AppleSnail</title>
+
+
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <style>
+        body {
+            background: #bebfc0;
+            margin: 0;
+            font-family: 'Segoe Print';
+        }
+
+        /* Top Banner */
+        .top-banner {
+            top: 0;
+            left: 80px;
+            right: 80px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #64df9bbb 0%, #1ed03e, #89e59a 100%);
+            padding: 15px 30px;
+        }
+
+        /* Banner */
+        .banner1 {
+            background: linear-gradient(135deg, #3de427 0%, #2ed22e 100%);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(6, 212, 24, 0.756);
+        }
+
+        .banner-logo {
+            color: rgb(238, 241, 238);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Search Box */
+        .search-container {
+            flex: 1;
+            max-width: 400px;
+            margin: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: -1px;
+            background: linear-gradient(135deg, #3de427 0%, #2ed22e 100%);
+            border-radius: -8px;
+            padding: 0px 0px;
+            box-shadow: 0 2px 10px rgba(6, 212, 24, 0.756);
+            width: 10px;
+            height: 10px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .search-box-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            width: -300px;
+            height: 21.5px;
+            background: rgb(214, 135, 7);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Icon Buttons */
+        .icon-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .menu-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 30px;
+            margin-right: auto;
+        }
+
+        .shopping-bag-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 50px;
+            margin-right: 39px;
+        }
+
+        .news-mode-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 400;
+            margin-right: -01.24px;
+        }
+
+        .contact-support-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: -10px;
+        }
+
+        .help-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        .arrow_back {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 10px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 0px;
+        }
+
+        .arrow_forward {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #010101;
+            font-size: 10px;
+            cursor: pointer;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .clear-line {
+            clear: both;
+            /* 👈 สั่งยกเลิกการลอยตัว ทำให้แท็กถัดไปต้องขึ้นแถวใหม่ด้านล่าง */
+        }
+
+
+        /* 1. โค้ด CSS สำหรับสร้างกรอบข้อความ */
+        .text-box1 {
+            border: 12px solid #00ff377c;
+            /* ความหนา 2px | เส้นทึบ (solid) | สีม่วง */
+            border-radius: 60px;
+            /* ปรับขอบให้โค้งมน (ลบมุมเหล็ก) */
+            padding: 15px;
+            /* เว้นระยะห่างระหว่างตัวหนังสือกับเส้นขอบด้านใน */
+            background-color: white;
+            /* ใส่สีพื้นหลังขาวข้างในกรอบให้ข้อความอ่านง่ายขึ้น */
+            margin-bottom: 20px;
+            /* เว้นระยะห่างด้านล่างก่อนถึงองค์ประกอบถัดไป */
+            max-width: 400px;
+        }
+
+        .text-box2 {
+            border: 12px solid #00ff377c;
+            /* ความหนา 2px | เส้นทึบ (solid) | สีม่วง */
+            border-radius: 8px;
+            /* ปรับขอบให้โค้งมน (ลบมุมเหล็ก) */
+            padding: 15px;
+            /* เว้นระยะห่างระหว่างตัวหนังสือกับเส้นขอบด้านใน */
+            background-color: white;
+            /* ใส่สีพื้นหลังขาวข้างในกรอบให้ข้อความอ่านง่ายขึ้น */
+            margin-bottom: 20px;
+            /* เว้นระยะห่างด้านล่างก่อนถึงองค์ประกอบถัดไป */
+            max-width: 200px;
+            /* กำหนดความกว้างสูงสุดของกรอบ (ไม่ให้ยาวเต็มจอ) */
+            width: 200px;
+            /* ต้องกำหนดความกว้างของกล่อง */
+            margin-left: auto;
+            /* ดันพื้นที่ว่างฝั่งซ้ายทั้งหมด เพื่อผลักกล่องไปทางขวา */
+            margin-right: 0;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" top-banner">
+        <div class="banner-icon">
+            <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h1>Apple Snail</h1>
+    </div>
+    <div class="banner1">
+        <div class="menu-icon">
+            <i class="material-icons">menu</i>
+            <span>Menu</span>
+        </div>
+        <div class="arrow_back">
+            <i class="material-icons">arrow_back</i>
+        </div>
+        <div class="arrow_forward">
+            <i class="material-icons">arrow_forward</i>
+        </div>
+        <div class="shopping-bag-icon">
+            <i class="material-icons">shopping_bag</i>
+            <span>Product</span>
+        </div>
+        <div class="cart-icon">
+            <i class="material-icons">shopping_cart</i>
+            <span>Cart</span>
+        </div>
+        <div class="search-box">
+            <i class="material-icons search-icon">search</i>
+            <input type="text" placeholder="Search...">
+            <button type="submit" style="background-color: rgb(214, 135, 7);">
+                <i class="search-box-button">Enter</i>
+            </button>
+        </div>
+        <div class="news-mode-icon">
+            <i class="material-icons">newspaper</i>
+            <span>News</span>
+        </div>
+        <div class="contact-support-icon">
+            <i class="material-icons">support_agent</i>
+            <span>Contact</span>
+        </div>
+        <div class="help-icon">
+            <i class="material-icons">help</i>
+            <span>Help</span>
+        </div>
+    </div>
+    <!--<p>นี่คือพื้นที่ทดสอบการเขียนโค้ด HTML และ CSS</p>
+    </div>
+    <br><br>
+    </br>
+    <div class="content-container">
+        <!-- 2. วิธีใช้งาน: นำแท็ก <div class="text-box"> มาครอบข้อความที่ต้องการใส่กรอบ -->
+    <br>
+    <div class="text-box1">
+        <strong>ข้อความในกรอบ:</strong><br>
+        ทดสอบการใส่กรอบข้อความด้วย CSS สามารถปรับความหนา สี และความโค้งมนของขอบได้ตามใจชอบเลยครับ
+    </div>
+    <div class="text-box1">
+        <strong>ข้อความในกรอบ:</strong><br>
+        <h1>หัวข้อเเบบ Header H1 </h1>
+        <h2>หัวข้อเเบบ Header H2 </h2>
+        <h3>หัวข้อเเบบ Header H3 </h3>
+        <h4>หัวข้อเเบบ Header H4 </h4>
+        <h5>หัวข้อเเบบ Header H5 </h5>
+        <h6>หัวข้อเเบบ Header H6 </h6>
+        <strong> ทำตัวอักษรให้เป็นตัวหนา</strong><br><br>
+        <i>ทำตัวอักษรให้เป็นตัวเอียง</i><br><br>
+        <em>ทำตัวอักษรให้เป็นตัวเอียง</em><br><br>
+    </div>
+    <div class="text-box1">
+        <strong>ข้อความในกรอบ:</strong><br>
+        <p>นี่คือย่อหน้าแรก</p>
+        <p>นี่คือย่อหน้าที่สอง</p>
+        <p>นี่คือย่อหน้าที่สาม</p>
+        <p>นี่คือย่อหน้าที่สี่</p>
+        <p>นี่คือย่อหน้าที่ห้า</p>
+        <br><br>
+        X<sup>2</sup><br><br>
+        H<sub>2</sub>O<br><br>
+    </div>
+    <div class="text-box1">
+        <marquee>เเสดงตัวอักษรวิ่ง</marquee><br><br>
+        <p>สำหรับย่อหน้าใหม่333333333333333333</p>
+        <p>สำหรับย่อหน้าใหม่</p>
+        <p>สำหรับย่อหน้าใหม่</p>
+        <a href="http://google.com">Test</a> <br><br>
+    </div>
+    <div class="text-box1">
+        <img src="freshwater-aquatic-snails-species-overview.jpg" alt=" คำอธิบายรูปกรณีรูปหาย" width="70" height="50">
+        <br><br>
+    </div>
+    <div class="text-box1">
+        <ul>
+            <li>หัวข้อ1</li>
+            <li>หัวข้อ2</li>
+            <li>หัวข้อ3</li>
+        </ul>
+        <ol>
+            <li>หัวข้อ1</li>
+            <li>หัวข้อ2</li>
+            <li>หัวข้อ3</li>
+        </ol><br><br>
+    </div>
+    <div class="text-box1">
+        <span style="color: rgba(194, 194, 7, 0.555); ">สวัสดีวันจันทร์</span> <span
+            style="color: pink; ">วันอังคาร</span> <span style="color: green;">วันพุธ</span>
+        <br><br>
+    </div>
+    <table border="1">
+        <tr>
+            <th>เนื้อหาเเถว ที่ 1 </th>
+            <th>เนื้อหาเเถว ที่ 2 </th>
+            <th>เนื้อหาเเถว ที่ 3 </th>
+        </tr>
+        <tr>
+            <td>เนื้อหาเเถว ที่ 1 หัวข้อคอลัมน์ที่ 1</td>
+            <td>เนื้อหาเเถว ที่ 2 หัวข้อคอลัมน์ที่ 2</td>
+            <td>เนื้อหาเเถว ที่ 3 หัวข้อคอลัมน์ที่ 3</td>
+        </tr>
+        <tr>
+            <td>เนื้อหาเเถว ที่ 1 หัวข้อคอลัมน์ที่ 1</td>
+            <td>เนื้อหาเเถว ที่ 2 หัวข้อคอลัมน์ที่ 2</td>
+            <td>เนื้อหาเเถว ที่ 3 หัวข้อคอลัมน์ที่ 3</td>
+        </tr>
+    </table>
+    </div </body>
+
+</html>
